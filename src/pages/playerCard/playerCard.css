@@ -1,0 +1,22 @@
+.player-card-container{
+    background-color: white;
+    margin-top: 20px;
+    height: 70%;
+    width: 80%;
+    border-radius: 5px;
+
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.player-card-container .profile-informations{
+    border: 1px solid red;
+    grid-area: 0 / 0 / 1 / 1;
+    height: 150px;
+    display: grid;
+    
+    grid-template-rows: 1fr 6fr 1fr;
+}
+.player-card-container .profile-informations .player-name{
+    font-size: 25px;
+    color: red;
+}
