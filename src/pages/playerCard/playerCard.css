@@ -1,9 +1,67 @@
-.player-card-container{
-    background-color: white;
+.player-card-container {
+  background-color: white;
+  height: 80%;
+  width: 60%;
+  margin-top: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.player-card-container .player-card-header{
-    border: 1px solid black;
+.player-card-container .player-card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border-bottom: 10px solid gray;
+  width: 95%;
 }
-.player-card-container .profile-informations .player-name{
+.player-card-container .player-card-header .player-title {
+  grid-area: 0 / 0 / 1 / 1;
+  background-color: blue;
+}
+.player-card-container .player-card-header .player-name {
+  grid-area: 2 / 2 / 3 / 2;
+  background-color: red;
+}
+.player-card-container .player-card-header .player-account-status {
+  grid-area: 2 / 2 / 3 / 2;
+  background-color: green;
+}
+.player-card-container .player-card-header .player-twitch {
+  grid-area: 2 / 2 / 3 / 2;
+  background-color: purple;
+}
+
+.player-card-container .player-card-main {
+  height: 83%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+}
+
+.player-card-container .player-card-main .left-side {
+  border: 1px solid black;
+  width: 50%;
+  height: 100%;
+  padding-left: 15px;
+}
+.left-side .player-profile {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+}
+.left-side .player-profile .profile-picture{
+  background: blueviolet;
+}
+.left-side .player-profile .player-info{
 
 }

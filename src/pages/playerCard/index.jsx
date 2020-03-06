@@ -80,6 +80,15 @@ const MMR = [
     exercice: 1000,
     exercice_race: 0,
     amt: 2100
+  },
+  {
+    name: "now",
+    bullet: 2000,
+    blitz: 900,
+    rapid: 700,
+    exercice: 1000,
+    exercice_race: 0,
+    amt: 2100
   }
 ];
 
@@ -88,57 +97,62 @@ export default function PlayerCard() {
     <div className="player-card-container">
       <div className="player-card-header">
         <h1 className="player-title">GM</h1>
-        <div className="player-status"></div>
         <h1 className="player-name">Player-name</h1>
         <div className="player-account-status">
           <img src={diamondIcon} alt=""></img>
         </div>
         <div className="player-twitch">
-          <img src={twitchIcon} alt=""></img>
+          <a href="#">
+            <img src={twitchIcon} alt=""></img>
+          </a>
         </div>
       </div>
-
       <div className="player-card-main">
-        <div className="profile-picture">
-          <img src="https://images.chesscomfiles.com/uploads/v1/user/29470396.2067fb7d.200x200o.d0ac00b9e40c.png"></img>
+        <div className="left-side">
+          <div className="player-profile">
+            <div className="profile-picture">
+              <img src="https://images.chesscomfiles.com/uploads/v1/user/29470396.2067fb7d.200x200o.d0ac00b9e40c.png"></img>
+            </div>
+
+            <div className="player-info">
+              <h1 className="player-nickname">Player_nickname</h1>
+              <h1 className="player-country">Player_country</h1>
+
+              <h2 className="player-followers">Followers</h2>
+              <h2 className="player-followers-num">234678</h2>
+            </div>
+            <div>
+              <h2 className="player-fide">Fide ranking</h2>
+              <h2 className="player-fide-num">3000</h2>
+            </div>
+            <div className="player-mmrs">
+              <LineChart
+                width={600}
+                height={300}
+                data={MMR}
+                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              >
+                <Line type="monotone" dataKey="rapid" stroke="#1884d8" />
+                <Line type="monotone" dataKey="blitz" stroke="#6889d8" />
+                <Line type="monotone" dataKey="bullet" stroke="#288458" />
+                <Line type="monotone" dataKey="exercice" stroke="#9894d8" />
+                <Line
+                  type="monotone"
+                  dataKey="exercice_race"
+                  stroke="#388568"
+                />
+                <CartesianGrid strokeDasharray="3 3" />
+                <Tooltip />
+                <YAxis />
+                <XAxis dataKey="name" />
+                <Legend />
+              </LineChart>
+            </div>
+          </div>
         </div>
-
-        <h1 className="player-nickname">Player_nickname</h1>
-        <h1 className="player-country">Player_country</h1>
-
-        <div>
-          <h2 className="player-followers">Followers</h2>
-          <h2 className="player-followers-num">234678</h2>
+        <div className="player-history">
+          <h1>I HAVE NO IDEA HOW I WILL DO tHIS PARt xD</h1>
         </div>
-
-        <div>
-          <h2 className="player-fide">Fide ranking</h2>
-          <h2 className="player-fide-num">3000</h2>
-        </div>
-      </div>
-
-      <div className="player-mmrs">
-        <LineChart
-          width={600}
-          height={300}
-          data={MMR}
-          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-        >
-          <Line type="monotone" dataKey="rapid" stroke="#1884d8" />
-          <Line type="monotone" dataKey="blitz" stroke="#6889d8" />
-          <Line type="monotone" dataKey="bullet" stroke="#288458" />
-          <Line type="monotone" dataKey="exercice" stroke="#9894d8" />
-          <Line type="monotone" dataKey="exercice_race" stroke="#388568" />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Tooltip />
-          <YAxis />
-          <XAxis dataKey="name" />
-          <Legend />
-        </LineChart>
-      </div>
-
-      <div className="player-history">
-        <h1>I HAVE NO IDEA HOW I WILL DO tHIS PARt xD</h1>
       </div>
     </div>
   );
